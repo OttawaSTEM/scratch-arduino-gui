@@ -148,30 +148,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
 var onClickLinkLogo = function onClickLinkLogo() {
-  window.open('https://ottawastem.com/support/', '_self');
+  window.open('https://github.com/OttawaSTEM/scratch-arduino-link/releases', '_blank');
 };
 
 var onClickLogo = function onClickLogo() {
-  window.open('https://ottawastem.com/scratch/', '_self');
-};
-
-var onClickSignin = function onClickSignin() {
-  {
-    "undefined".trim() == 'development' ? window.open('http://127.0.0.1:8000/accounts/login/', '_self') : window.open('http://ottawastem.com/accounts/login/', '_self');
-  }
-};
-
-var onClickSignOut = function onClickSignOut() {
-  {
-    "undefined".trim() == 'development' ? window.open('http://127.0.0.1:8000/accounts/logout/', '_self') : window.open('http://ottawastem.com/accounts/logout/', '_self');
-  }
-};
-
-var onClickRemix = function onClickRemix(projectId) {
-  console.log(projectId);
-  {
-    "undefined".trim() == 'development' ? window.open('http://127.0.0.1:8000/scratch/project/' + projectId + '/remix/', '_self') : window.open('http://ottawastem.com/scratch/project/' + projectId + '/remix/', '_self');
-  }
+  window.open('https://ottawastem.com', '_blank');
 };
 
 var onClickCheckUpdate = function onClickCheckUpdate() {
@@ -253,10 +234,7 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
     backpackHost: backpackHost,
     canSave: false,
     onClickLinkLogo: onClickLinkLogo,
-    onClickLogo: onClickLogo,
-    onClickRemix: onClickRemix,
-    onClickSignin: onClickSignin,
-    onClickSignOut: onClickSignOut
+    onClickLogo: onClickLogo
   }), appTarget);
 });
 
