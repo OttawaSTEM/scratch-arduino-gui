@@ -18,15 +18,19 @@ on:
 # permissions:
 #   contents: write
 
-permissions:
-  pages: write
-  id-token: write
-
 jobs:
   release:
     strategy:
       matrix:
         node-version: [14.x]
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
     steps:
