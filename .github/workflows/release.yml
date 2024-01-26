@@ -18,6 +18,9 @@ on:
 # permissions:
 #   contents: write
 
+permissions:
+  id-token: write
+
 jobs:
   release:
     strategy:
