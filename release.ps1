@@ -17,3 +17,5 @@ cd ../scratch-arduino-gui
 npm i --package-lock-only scratch-arduino-vm@$scracth_arduino_vm_version
 
 git commit -am "update blocks l10n vm"
+npm version patch
+git push -u origin develop
