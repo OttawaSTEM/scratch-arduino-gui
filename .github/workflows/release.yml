@@ -40,15 +40,19 @@ jobs:
           npm install
           npm run build
 
-      # - uses: actions/upload-artifact@v4
-      #   with:
-      #     name: build
-      #     path: build
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build
 
       - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build
+        uses: actions/deploy-pages@v4
+
+      # - name: Deploy to GitHub Pages 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     folder: build
 
       # - name: Deploy to GitHub Pages 🚀
       #   uses: peaceiris/actions-gh-pages@v3
