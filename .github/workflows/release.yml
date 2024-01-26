@@ -19,6 +19,7 @@ on:
 #   contents: write
 
 permissions:
+  pages: write
   id-token: write
 
 jobs:
@@ -47,7 +48,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build
+          name: github-pages
           path: build
 
       - name: Deploy to GitHub Pages 🚀
