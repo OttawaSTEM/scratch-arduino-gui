@@ -7,27 +7,19 @@ on:
   push:
     branches:
       - main
-  repository_dispatch:
-    types:
-      [
-        release_scratch_arduino_vm,
-        release_scratch_arduino_blocks,
-        release_scratch_arduino_l10n,
-      ]
+  # repository_dispatch:
+  #   types:
+  #     [
+  #       release_scratch_arduino_vm,
+  #       release_scratch_arduino_blocks,
+  #       release_scratch_arduino_l10n,
+  #     ]
 
 jobs:
   release:
     strategy:
       matrix:
         node-version: [14.x]
-
-    # permissions:
-    #   pages: write
-    #   id-token: write
-
-    # environment:
-    #   name: gh-pages
-    #   url: ${{ steps.deployment.outputs.page_url }}
 
     permissions:
       contents: write
@@ -55,18 +47,7 @@ jobs:
           name: github-pages
           path: build
 
-      # - name: Deploy to GitHub Pages 🚀
-      #   uses: actions/deploy-pages@v4
-
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build
-
-      # - name: Deploy to GitHub Pages 🚀
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: build
-      #     keep_files: true
-      #     enable_jekyll: false
