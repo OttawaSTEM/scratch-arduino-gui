@@ -15,8 +15,8 @@ on:
         release_scratch_arduino_l10n,
       ]
 
-permissions:
-  contents: write
+# permissions:
+#   contents: write
 
 jobs:
   release:
@@ -38,6 +38,7 @@ jobs:
       - name: Install and Build
         run: |
           npm install
+          npm list --depth=0 | grep scratch-arduino
           npm run build
 
       - name: Upload build artifact
