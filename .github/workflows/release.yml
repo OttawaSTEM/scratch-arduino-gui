@@ -15,6 +15,9 @@ on:
         release_scratch_arduino_l10n,
       ]
 
+permissions:
+  contents: write
+
 jobs:
   release:
     strategy:
@@ -30,18 +33,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          # cache: "npm"
 
       - name: Install and Build
         run: |
-          npm ci
-          npm list --depth=0 | grep scratch-arduino
+          npm install
           npm run build
 
-      - uses: actions/upload-artifact@v4
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: build
+      #     path: build
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: build
-          path: build
+          folder: build
 
       # - name: Deploy to GitHub Pages 🚀
       #   uses: peaceiris/actions-gh-pages@v3
