@@ -1,6 +1,6 @@
 {
     "name": "scratch-arduino-gui",
-    "version": "0.1.12",
+    "version": "0.1.13",
     "description": "GraphicaL User Interface for creating and running Scratch Arduino projects",
     "main": "./desktop/main.js",
     "scripts": {
@@ -82,7 +82,7 @@
         "redux-throttle": "0.1.1",
         "scratch-arduino-blocks": "^0.1.22",
         "scratch-arduino-l10n": "^3.10.12",
-        "scratch-arduino-vm": "^0.2.24",
+        "scratch-arduino-vm": "^0.2.25",
         "scratch-audio": "0.1.0-prerelease.20200528195344",
         "scratch-paint": "0.2.0-prerelease.20210615011117",
         "scratch-render": "0.1.0-prerelease.20210325231800",
