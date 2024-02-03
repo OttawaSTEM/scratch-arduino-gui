@@ -178,7 +178,7 @@ const deviceData = [
     },
     // Nokia 5110
     {
-        name: 'Nokia 5110 LCD',
+        name: 'LCD Screen 84x48',
         deviceId: 'nokia5110',
         manufactor: 'arduino.cc',
         leanMore: 'https://www.arduino.cc/reference/en/libraries/nokia-5110-lcd-library/',
