@@ -13,11 +13,11 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html,\nbody,\n.index_app_3Qs6X {\n    /* probably unecessary, transitional until layout is refactored */\n    width: 100%; \n    height: 100%;\n    margin: 0;\n\n    /* Setting min height/width makes the UI scroll below those sizes */\n    min-width: 1024px;\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\n}\n\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\n\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\n", ""]);
+exports.push([module.i, "html,\nbody,\n.index_app_2mqDO {\n    /* probably unecessary, transitional until layout is refactored */\n    width: 100%; \n    height: 100%;\n    margin: 0;\n\n    /* Setting min height/width makes the UI scroll below those sizes */\n    min-width: 1024px;\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\n}\n\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\n\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\n", ""]);
 
 // exports
 exports.locals = {
-	"app": "index_app_3Qs6X"
+	"app": "index_app_2mqDO"
 };
 
 /***/ }),
@@ -148,11 +148,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
 var onClickLinkLogo = function onClickLinkLogo() {
-  window.open('https://github.com/OttawaSTEM/scratch-arduino-link/releases', '_blank');
+  window.open('https://ottawastem.com/support/', '_self');
 };
 
 var onClickLogo = function onClickLogo() {
-  window.open('https://ottawastem.com', '_blank');
+  window.open('https://ottawastem.com/scratch/', '_self');
+};
+
+var onClickSignin = function onClickSignin() {
+  {
+    "undefined".trim() == 'development' ? window.open('http://127.0.0.1:8000/accounts/login/', '_self') : window.open('http://ottawastem.com/accounts/login/', '_self');
+  }
+};
+
+var onClickSignOut = function onClickSignOut() {
+  {
+    "undefined".trim() == 'development' ? window.open('http://127.0.0.1:8000/accounts/logout/', '_self') : window.open('http://ottawastem.com/accounts/logout/', '_self');
+  }
+};
+
+var onClickRemix = function onClickRemix(projectId) {
+  console.log(projectId);
+  {
+    "undefined".trim() == 'development' ? window.open('http://127.0.0.1:8000/scratch/project/' + projectId + '/remix/', '_self') : window.open('http://ottawastem.com/scratch/project/' + projectId + '/remix/', '_self');
+  }
 };
 
 var onClickCheckUpdate = function onClickCheckUpdate() {
@@ -234,7 +253,10 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
     backpackHost: backpackHost,
     canSave: false,
     onClickLinkLogo: onClickLinkLogo,
-    onClickLogo: onClickLogo
+    onClickLogo: onClickLogo,
+    onClickRemix: onClickRemix,
+    onClickSignin: onClickSignin,
+    onClickSignOut: onClickSignOut
   }), appTarget);
 });
 
